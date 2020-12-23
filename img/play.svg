@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>.cls-1{fill:#00cfff;}.cls-2{fill:#00f076;}.cls-3{fill:#fc0;}.cls-4{fill:#f93647;}</style>
+    </defs>
+    <title>play2</title>
+    <g id="Layer_4" data-name="Layer 4">
+        <path class="cls-1" d="M6.38,1.63a3,3,0,0,0-.71,1.93V46.44a3,3,0,0,0,.46,1.61L32.29,25Z"/>
+        <path class="cls-2" d="M40.09,18.13,10.26.91a3,3,0,0,0-3.88.72L32.29,25Z"/>
+        <path class="cls-3" d="M47.39,22.35l-7.3-4.22L32.29,25,40,31.94l7.43-4.29A3.06,3.06,0,0,0,47.39,22.35Z"/>
+        <path class="cls-4" d="M6.13,48.05a3.07,3.07,0,0,0,4.13,1L40,31.94,32.29,25Z"/>
+    </g>
+</svg>

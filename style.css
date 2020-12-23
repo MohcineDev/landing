@@ -1,0 +1,356 @@
+* {
+    --bg: rgb(31, 41, 55);
+    --dark: #11171f;
+     --color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--color);
+    margin: 0;
+}
+
+nav {
+    color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+nav div {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 100%));
+    align-items: center;
+}
+
+nav h1 {
+    display: inline-block;
+    cursor: pointer;
+}
+
+nav h1:hover {
+    color: rgb(170, 170, 170);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-self: flex-end;
+}
+
+nav ul li {
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+nav ul li:nth-child(1) {
+    background-color: var(--color);
+}
+
+nav ul li:nth-child(1) a {
+    color: var(--bg);
+}
+
+/**/
+
+.hero {
+    width: 80%;
+    margin: 70px auto;
+}
+
+.hero>div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0px, 100%));
+    align-items: center;
+    justify-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero a {
+    background-color: var(--color);
+    color: var(--bg);
+    font-weight: 600;
+    margin: 10px 0;
+    border-radius: 15px;
+    padding: 12px 32px;
+    display: inline-block;
+    position: relative;
+}
+
+.hero a:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border: 8px solid;
+    box-sizing: border-box;
+    border-color: transparent transparent transparent var(--bg);
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+}
+
+.hero img {
+    width: 58%;
+}
+
+/* bodybuilding */
+
+.bodybuilding {
+    background: url('img/bodybuilder.jpg');
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    clip-path: polygon(0px 100px, 100% 0%, 100% calc(100% - 100px), 0% 100%);
+}
+
+.bodybuilding>div {
+    position: absolute;
+    background-color: rgba(31, 41, 55, .9);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.bodybuilding>div>div {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bodybuilding .app {
+    font-size: 2rem;
+}
+
+.bodybuilding h2 {
+    font-size: 2.5rem;
+    margin: 1.75rem 0;
+}
+
+.bodybuilding p {
+    text-align: center;
+    width: 80%;
+}
+
+.bodybuilding .btns {
+    margin: 2.5rem 0;
+}
+
+.btns a {
+    background-color: #ddd;
+    color: rgb(27, 28, 36);
+    font-weight: 700;
+    border-radius: 5px;
+    padding: .7rem 1rem;
+    margin-right: 0.5rem;
+    transition: all .3s ease-in;
+    box-shadow: 0px 0px 5px 1px #ddd;
+}
+
+.btns a:hover {
+    background-color: var(--bg);
+    color: var(--color);
+}
+
+.btns img {
+    width: 20px;
+    vertical-align: bottom;
+    margin: 0 5px;
+}
+
+/* servives */
+
+.servives {
+    width: 80%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.servives h2 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin: 2rem 0;
+}
+
+.servives>div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+
+.servives .card {
+    margin: 1rem;
+    background-color: rgb(17, 23, 31);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgb(74, 95, 123);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.servives .card:hover {
+    box-shadow: -2px -2px 5px rgb(74, 95, 123);
+}
+
+.servives .card img {
+    display: block;
+    width: 25%;
+    margin: 0.75rem auto;
+}
+
+.card span {
+    font-weight: 600;
+    display: block;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    text-transform: capitalize;
+}
+
+.card p {
+    line-height: 25px;
+}
+
+/*testimonials*/
+
+.testimonials {
+    margin: 60px auto;
+    width: 80%;
+}
+
+.testimonials span {
+    font-weight: 800;
+}
+
+.testimonials>p:nth-of-type(1) {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.testimonials>p:nth-of-type(2) {
+    margin-bottom: 60px;
+}
+
+.testimonials img {
+    width: 40px;
+}
+
+.testimonials>div {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr));
+    grid-template-rows: minmax(0px, 100%);
+    gap: 20px;
+    align-items: center;
+}
+
+.testimonials .cards {
+    background-color: var(--color);
+    color: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 0px 3px var(--color);
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.testimonials .cards div {
+    border: 2px solid var(--bg);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.testimonials .cards p:nth-of-type(1) {
+    text-align: center;
+    line-height: 25px;
+    font-weight: 700;
+    min-height: 45%;
+    margin-bottom: 0;
+}
+
+/**/
+
+.subscribe {
+    width: 80%;
+    margin: 80px auto;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.subscribe p:nth-of-type(1) {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.subscribe p:nth-of-type(2) {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.subscribe form {
+    margin: 4rem auto;
+}
+
+.subscribe form input {
+    border: none;
+    padding: 10px 20px;
+}
+
+.subscribe form input[type="text"] {
+    background-color: var(--color);
+    border-radius: 15px 0 0 15px;
+}
+
+.subscribe form input[type="submit"] {
+    margin-left: -4px;
+    border-radius: 0 15px 15px 0;
+    color: var(--bg);
+    background-color: var(--color);
+    cursor: pointer;
+}
+
+/**/
+
+footer {
+    margin-top: 120px;
+    background-color: var(--dark);
+    padding: 20px 0;
+}
+footer .social{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+footer img{
+    width: 30px;
+    padding:10px;
+}
+.copyright {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    color: rgb(112, 137, 172) ;
+    justify-content: space-between;
+    border-top: 1px solid var(--bg);
+}
+.copyright a{
+    color: rgb(112, 137, 172) ;
+}
