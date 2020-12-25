@@ -1,12 +1,12 @@
 * {
     --bg: rgb(31, 41, 55);
     --dark: #11171f;
-     --color: #ddd;
+    --color: #ddd;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: var(--bg);
+    background-color: rgb(38, 51, 73);
     color: var(--color);
     margin: 0;
 }
@@ -60,14 +60,15 @@ nav ul li:nth-child(1) a {
 /**/
 
 .hero {
-    width: 80%;
-    margin: 70px auto;
+    height: 100vh;
 }
 
 .hero>div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0px, 100%));
     align-items: center;
+    width: 80%;
+    margin: 70px auto;
     justify-items: center;
 }
 
@@ -80,13 +81,16 @@ nav ul li:nth-child(1) a {
     color: var(--bg);
     font-weight: 600;
     margin: 10px 0;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 12px 32px;
     display: inline-block;
     position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px #aaa;
+    z-index: 2;
 }
 
-.hero a:after {
+.hero a::after {
     content: "";
     width: 8px;
     height: 8px;
@@ -97,6 +101,29 @@ nav ul li:nth-child(1) a {
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
+    transition: .3s;
+}
+
+.hero a:hover::after {
+    right: 0%;
+}
+
+.hero a::before {
+    content: "";
+    background: linear-gradient(#eee, #eee), linear-gradient(to right, #eee,#fff);;
+    background-position: 0% 0px, 100% 0px;
+    background-size: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    left: 0px;
+    z-index: -1;
+}
+.hero a:hover::before{
+    background-size: 50% 100%, 50% 100%;
 }
 
 .hero img {
@@ -195,7 +222,7 @@ nav ul li:nth-child(1) a {
 
 .servives .card {
     margin: 1rem;
-    background-color: rgb(17, 23, 31);
+    background-color: rgb(33, 45, 60);
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 2px 2px 5px rgb(74, 95, 123);
@@ -330,27 +357,31 @@ nav ul li:nth-child(1) a {
 
 footer {
     margin-top: 120px;
-    background-color: var(--dark);
+    background-color: rgb(33, 45, 60);
     padding: 20px 0;
 }
-footer .social{
+
+footer .social {
     width: 80%;
     margin: 20px auto;
     display: flex;
     justify-content: center;
 }
-footer img{
+
+footer img {
     width: 30px;
-    padding:10px;
+    padding: 10px;
 }
+
 .copyright {
     width: 80%;
     display: flex;
     margin: 0 auto;
-    color: rgb(112, 137, 172) ;
+    color: rgb(112, 137, 172);
     justify-content: space-between;
     border-top: 1px solid var(--bg);
 }
-.copyright a{
-    color: rgb(112, 137, 172) ;
+
+.copyright a {
+    color: rgb(112, 137, 172);
 }
