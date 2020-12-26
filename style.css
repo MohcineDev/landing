@@ -1,14 +1,15 @@
 * {
-    --bg: rgb(31, 41, 55);
+    --bg: rgb(38, 51, 73);
     --dark: #11171f;
     --color: #ddd;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: rgb(38, 51, 73);
+    background-color: var(--bg);
     color: var(--color);
     margin: 0;
+    position: relative;
 }
 
 nav {
@@ -60,15 +61,16 @@ nav ul li:nth-child(1) a {
 /**/
 
 .hero {
-    height: 100vh;
+    height: 90vh;
 }
 
 .hero>div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0px, 100%));
-    align-items: center;
+    grid-template-rows: 90vh;
     width: 80%;
-    margin: 70px auto;
+    margin: auto;
+    align-items: center;
     justify-items: center;
 }
 
@@ -115,7 +117,6 @@ nav ul li:nth-child(1) a {
 .hero a::before {
     content: "";
     background: linear-gradient(#eee, #eee), linear-gradient(to right, #eee, #fff);
-    ;
     background-position: 0% 0px, 100% 0px;
     background-size: 0 100%, 0 100%;
     background-repeat: no-repeat;
@@ -194,11 +195,33 @@ nav ul li:nth-child(1) a {
     padding: .7rem 1rem;
     margin-right: 0.5rem;
     transition: all .3s ease-in;
-    box-shadow: 0px 0px 5px 1px #ddd;
+    box-shadow: 0px 0px 5px #ddd;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btns a::before {
+    content: "";
+    background: linear-gradient( to top, var(--bg) 60%, var(--color)), linear-gradient( var(--bg) 60%, var(--color));
+    background-position: 0% 0%, 0% 100%;
+    background-size: 100% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: .3s;
+    left: 0px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.btns a:hover::before {
+    background-size: 100% 50%, 100% 50%;
 }
 
 .btns a:hover {
-    background-color: var(--bg);
     color: var(--color);
 }
 
@@ -212,8 +235,12 @@ nav ul li:nth-child(1) a {
 
 .servives {
     width: 80%;
-    margin: 60px auto;
+    margin: 0 auto;
     text-align: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .servives h2 {
@@ -279,10 +306,6 @@ nav ul li:nth-child(1) a {
     margin-bottom: 60px;
 }
 
-.testimonials img {
-    width: 40px;
-}
-
 .testimonials>div {
     display: grid;
     grid-template-columns: repeat(4, minmax(0px, 1fr));
@@ -301,14 +324,21 @@ nav ul li:nth-child(1) a {
     padding: 20px;
     box-shadow: 0px 0px 3px var(--color);
     height: 100%;
+    justify-content: space-between;
     box-sizing: border-box;
 }
 
 .testimonials .cards div {
     border: 2px solid var(--bg);
     margin: 10px;
+    border-radius: 25%;
     padding: 10px;
-    border-radius: 50%;
+    width: 40px;
+}
+
+.testimonials .cards img {
+    width: 100%;
+    height: 100%;
 }
 
 .testimonials>p:nth-of-type(2) {
@@ -364,12 +394,17 @@ nav ul li:nth-child(1) a {
     color: var(--bg);
     background-color: var(--color);
     cursor: pointer;
+    transition: .3s;
+}
+
+.subscribe form input[type="submit"]:hover {
+    background-color: #eee;
 }
 
 /**/
 
 footer {
-    margin-top: 120px;
+    margin-top: 80px;
     background-color: rgb(33, 45, 60);
     padding: 20px 0;
 }
@@ -389,6 +424,7 @@ footer img {
 .copyright {
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     color: rgb(112, 137, 172);
     justify-content: space-between;
@@ -397,40 +433,60 @@ footer img {
 
 .copyright a {
     color: rgb(112, 137, 172);
+    transition: .5s;
 }
 
-/* Extra small devices (phones, 600px and down) */
+.copyright a:hover {
+    color: var(--color);
+}
 
-@media only screen and (max-width: 600px) {}
+.scroll {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    animation-name: toTop;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    display: none;
+}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+.scroll:hover {
+    fill: var(--color);
+}
 
-@media only screen and (min-width: 600px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-
-@media only screen and (min-width: 1200px) {}
+@keyframes toTop {
+    50% {
+        bottom: 20px;
+    }
+}
 
 /* Large devices */
 
 @media only screen and (max-width: 992px) {
     .hero>div {
-        width: 98%;
+        width: 90%;
+    }
+    .hero img {
+        width: 70%;
     }
     .hero>div>div {
         margin-left: 15px;
     }
-    .servives {
+    .servives, .testimonials {
         width: 98%;
     }
     .bodybuilding>div>div {
         width: 90%;
     }
-    .testimonials {
-        width: 98%;
-    }
-    .testimonials div {
+    .testimonials>div {
         gap: 5px;
+    }
+    .testimonials .cards {
+        padding: 10px;
     }
 }
 
@@ -440,6 +496,7 @@ footer img {
     .hero>div {
         margin: 15px auto;
         grid-template-columns: minmax(0px, 100%);
+        grid-template-rows: repeat(2, minmax(50%, 100%));
     }
     .hero>div>div {
         grid-row: 2/3;
@@ -457,9 +514,9 @@ footer img {
         margin: 20px 0;
     }
     .hero a {
-        width: 20%;
+        width: 25%;
     }
-    .servives {
+    .servives, .testimonials {
         width: 80%;
     }
     .servives div {
@@ -468,12 +525,58 @@ footer img {
     .bodybuilding {
         clip-path: polygon(0px 50px, 100% 0%, 100% calc(100% - 50px), 0% 100%);
     }
-    .testimonials {
-        width: 90%;
-    }
     .testimonials>div {
         grid-template-columns: repeat(2, minmax(0px, 1fr));
         grid-template-rows: repeat(2, minmax(0px, 100%));
         gap: 15px;
+    }
+}
+
+/* small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    .hero>div>div {
+        margin-left: 0;
+    }
+    .testimonials>div {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .testimonials .cards {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .hero a {
+        width: 80%;
+    }
+    .bodybuilding {
+        clip-path: none;
+    }
+    .bodybuilding .app {
+        width: 100%;
+    }
+    .btns a {
+        display: block;
+        margin-top: 10px;
+    }
+    .servives, .subscribe {
+        width: 90%;
+    }
+    .subscribe form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .subscribe form input {
+        border-radius: 15px !important;
+        display: block;
+        margin-top: 10px;
+        width: 90%;
+    }
+    .copyright p {
+        margin: 0 auto;
+        margin-top: 15px;
     }
 }
