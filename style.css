@@ -76,6 +76,10 @@ nav ul li:nth-child(1) a {
     font-size: 2.5rem;
 }
 
+.hero p {
+    line-height: 25px;
+}
+
 .hero a {
     background-color: var(--color);
     color: var(--bg);
@@ -110,7 +114,8 @@ nav ul li:nth-child(1) a {
 
 .hero a::before {
     content: "";
-    background: linear-gradient(#eee, #eee), linear-gradient(to right, #eee,#fff);;
+    background: linear-gradient(#eee, #eee), linear-gradient(to right, #eee, #fff);
+    ;
     background-position: 0% 0px, 100% 0px;
     background-size: 0 100%, 0 100%;
     background-repeat: no-repeat;
@@ -122,7 +127,8 @@ nav ul li:nth-child(1) a {
     left: 0px;
     z-index: -1;
 }
-.hero a:hover::before{
+
+.hero a:hover::before {
     background-size: 50% 100%, 50% 100%;
 }
 
@@ -159,6 +165,7 @@ nav ul li:nth-child(1) a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .bodybuilding .app {
@@ -171,8 +178,8 @@ nav ul li:nth-child(1) a {
 }
 
 .bodybuilding p {
-    text-align: center;
     width: 80%;
+    line-height: 25px;
 }
 
 .bodybuilding .btns {
@@ -304,6 +311,10 @@ nav ul li:nth-child(1) a {
     border-radius: 50%;
 }
 
+.testimonials>p:nth-of-type(2) {
+    line-height: 25px;
+}
+
 .testimonials .cards p:nth-of-type(1) {
     text-align: center;
     line-height: 25px;
@@ -329,6 +340,7 @@ nav ul li:nth-child(1) a {
 .subscribe p:nth-of-type(2) {
     width: 70%;
     margin: 0 auto;
+    line-height: 25px;
 }
 
 .subscribe form {
@@ -338,15 +350,16 @@ nav ul li:nth-child(1) a {
 .subscribe form input {
     border: none;
     padding: 10px 20px;
+    outline: none;
 }
 
-.subscribe form input[type="text"] {
+.subscribe form input[type="email"] {
     background-color: var(--color);
     border-radius: 15px 0 0 15px;
 }
 
 .subscribe form input[type="submit"] {
-    margin-left: -4px;
+    margin-left: -6px;
     border-radius: 0 15px 15px 0;
     color: var(--bg);
     background-color: var(--color);
@@ -384,4 +397,83 @@ footer img {
 
 .copyright a {
     color: rgb(112, 137, 172);
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}
+
+/* Large devices */
+
+@media only screen and (max-width: 992px) {
+    .hero>div {
+        width: 98%;
+    }
+    .hero>div>div {
+        margin-left: 15px;
+    }
+    .servives {
+        width: 98%;
+    }
+    .bodybuilding>div>div {
+        width: 90%;
+    }
+    .testimonials {
+        width: 98%;
+    }
+    .testimonials div {
+        gap: 5px;
+    }
+}
+
+/* Medium devices */
+
+@media only screen and (max-width: 768px) {
+    .hero>div {
+        margin: 15px auto;
+        grid-template-columns: minmax(0px, 100%);
+    }
+    .hero>div>div {
+        grid-row: 2/3;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero img {
+        grid-row: 1/2;
+        width: 40%;
+    }
+    .hero h1 {
+        margin: 20px 0;
+    }
+    .hero a {
+        width: 20%;
+    }
+    .servives {
+        width: 80%;
+    }
+    .servives div {
+        grid-template-columns: 1fr;
+    }
+    .bodybuilding {
+        clip-path: polygon(0px 50px, 100% 0%, 100% calc(100% - 50px), 0% 100%);
+    }
+    .testimonials {
+        width: 90%;
+    }
+    .testimonials>div {
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        grid-template-rows: repeat(2, minmax(0px, 100%));
+        gap: 15px;
+    }
 }
