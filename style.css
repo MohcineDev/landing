@@ -203,7 +203,7 @@ nav ul li:nth-child(1) a {
 
 .btns a::before {
     content: "";
-    background: linear-gradient( to top, var(--bg) 60%, var(--color)), linear-gradient( var(--bg) 60%, var(--color));
+    background: linear-gradient( to top, var(--bg) 60%, rgb(58, 82, 124)), linear-gradient( var(--bg) 60%,rgb(58, 82, 124));
     background-position: 0% 0%, 0% 100%;
     background-size: 100% 0%, 100% 0%;
     background-repeat: no-repeat;
