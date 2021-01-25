@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="img/fav.png"/>
+    <link rel="icon" type="image/png" href="img/fav.png" />
     <link rel="stylesheet" href="style.css">
     <title>Landing page</title>
-
 </head>
 
 <body>
     <nav>
-        <div>
-            <h1>Phone</h1>
-            <ul>
-                <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
-        </div>
+        <a href="/">AppsN</a>
+        <ul>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                        d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+                </svg>
+            </li>
+        </ul>
     </nav>
 
     <section class="hero">
@@ -27,9 +32,9 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, voluptatibus modi nobis rem
                     exercitationem eveniet eum praesentium tenetur ratione explicabo corrupti enim laboriosam quibusdam
                     dolore recusandae officia nam error deserunt?</p>
-                <a href="#">Read More</a>
+                <a href="#more">Read More</a>
             </div>
-            <img src="img/done.png" alt="">
+            <img src="img/done.png" alt="why protein">
         </div>
     </section>
 
@@ -44,11 +49,9 @@
                     cupiditate laborum.</p>
                 <div class="btns">
                     <a href="#">
-                        <img src="./img/play.svg" alt=""> Play Store</a>
-                    <a href="#">
-                        <img src="https://www.apple.com/v/app-store/a/images/overview/icon_appstore__ev0z770zyxoy_large_2x.png"
-                            alt="appstore">
-                        App Store</a>
+                        <img width="20px" src="./img/play.svg" alt="google play store link"> Play
+                        Store</a>
+                    <a href="#"> <img width="20px" src="img/appstore.png" alt="apple store link"> App Store</a>
 
                 </div>
             </div>
@@ -58,20 +61,20 @@
         <h2>Our Servives</h2>
         <div>
             <div class="card">
-                <img src="img/bash-05.svg" alt="">
+                <img src="img/bash.svg" alt="icon">
                 <span>workout plan</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor deleniti iste nam
                     veritatis placeat numquam velit quidem molestiae, debitis harum voluptate tempora eveniet eligendi
                     nostrum corporis ex magni? Velit.</p>
             </div>
             <div class="card">
-                <img src="img/html-06.svg" alt="">
+                <img src="img/html.svg" alt="icon">
                 <span>nutrition strategy</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor deleniti iste nam
                     veritatis placeat numquam velit quidem .</p>
             </div>
             <div class="card">
-                <img src="img/react-08.svg" alt="">
+                <img src="img/react.svg" alt="icon">
                 <span>coaching online</span>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolor deleniti iste nam
                     veritatis placeat numquam velit quidem molestiae, debitis harum voluptate tempora eveniet eligendi.
@@ -79,7 +82,7 @@
             </div>
         </div>
     </section>
-    <section class="testimonials">
+    <section class="testimonials" id="more">
         <span id="testimonials">Testimonials</span>
         <p>Lorem ipsum</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatibus harum quibusdam dolorem quisquam
@@ -87,7 +90,7 @@
         <div>
             <div class="cards">
                 <div>
-                    <img src="img/html-06.svg" alt="">
+                    <img src="img/html.svg" alt="avatar">
                 </div>
                 <p>Lorem, ipsum dolor sit amet adipisicing elit, ipsum fugiat doloribus
                     sequi reiciendis esse porro possimus voluptates.</p>
@@ -95,7 +98,7 @@
             </div>
             <div class="cards">
                 <div>
-                    <img src="img/html-06.svg" alt="">
+                    <img src="img/html.svg" alt="avatar">
                 </div>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ipsum fugiat doloribus sequi.
                 </p>
@@ -103,7 +106,7 @@
             </div>
             <div class="cards">
                 <div>
-                    <img src="img/html-06.svg" alt="">
+                    <img src="img/html.svg" alt="avatar">
                 </div>
                 <p>Lorem, ipsum dolor sit . Voluptatum, ipsum fugiat doloribus sequi
                     reiciendis esse porro possimus voluptates doloremque.</p>
@@ -111,7 +114,7 @@
             </div>
             <div class="cards">
                 <div>
-                    <img src="img/html-06.svg" alt="">
+                    <img src="img/html.svg" alt="avatar">
                 </div>
                 <p>Lorem, ipsum dolor sitt. Voluptatum, ipsum fugiat doloribus sequi possimus voluptates doloremque.</p>
                 <p>Lorem ipsum dolor</p>
@@ -131,10 +134,36 @@
 
     <footer>
         <div class="social">
-            <img src="img/behance.svg" alt="">
-            <img src="img/bonfire_logo.svg" alt="">
-            <img src="img/linkedin.svg" alt="">
-            <img src="img/bash-05.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <title>Behance</title>
+                <path style="fill:#1d2633" d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25Z" />
+                <path style="fill:#c9dcfd"
+                    d="M13.24,26.3H18.5c1.17,0,3.17.51,3.17,2.75,0,1.16-.93,2.53-2.09,2.53H13.24ZM30.12,15.76h9.47v3.17H30.12ZM38.33,26.3h-7a3.43,3.43,0,0,1,3.5-3.13,3.48,3.48,0,0,1,3.46,3.13Zm-7.17,2.12H42.75v-.54A7.63,7.63,0,0,0,34.87,20,7.65,7.65,0,0,0,27,27.88a7.66,7.66,0,0,0,7.92,7.91c4.75,0,7-2.71,7.73-6.33H38.33c-.39,1.86-1.49,3.17-3.46,3.17s-3.56-1.85-3.71-4.21Zm-5.25,1a5.34,5.34,0,0,0-3.59-5,5.27,5.27,0,0,0-2.74-9.76H9V35.79H19.58a6.35,6.35,0,0,0,6.33-6.33ZM18.5,23.17H13.24V18.93H18.5a2.12,2.12,0,1,1,0,4.24Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <title>instagram</title>
+                <circle cx="25" cy="25" r="25" style="fill:#1d2633" />
+                <rect x="9" y="9" width="32" height="32" rx="7.23"
+                    style="fill:none;stroke:#c9dcfd;stroke-miterlimit:10;stroke-width:3px" />
+                <circle cx="25" cy="25" r="5.75"
+                    style="fill:none;stroke:#c9dcfd;stroke-miterlimit:10;stroke-width:3px" />
+                <circle cx="35.04" cy="14.96" r="1.96" style="fill:#c9dcfd" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <title>linkedin</title>
+                <path style="fill:#1d2633" d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25Z" />
+                <polygon style="fill:#c9dcfd"
+                    points="10.83 24.03 10.83 38.54 17.74 38.54 17.74 22.87 17.74 18.79 10.83 18.79 10.83 24.03" />
+                <path style="fill:#c9dcfd" d="M14.29,8.92a3.46,3.46,0,1,0,3.45,3.46A3.46,3.46,0,0,0,14.29,8.92Z" />
+                <path style="fill:#c9dcfd"
+                    d="M40.29,24.86c-.46-3.73-2.17-6.07-7.2-6.07-3,0-5,1.11-5.81,2.67h-.09V18.79h-5.5V38.54h5.75V28.75c0-2.58.49-5.08,3.68-5.08s3.4,2.95,3.4,5.25v9.62h5.93V27.69h0A22.74,22.74,0,0,0,40.29,24.86Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <title>twitter</title>
+                <path style="fill:#1d2633" d="M50,25A25,25,0,1,1,25,0,25,25,0,0,1,50,25Z" />
+                <path style="fill:#c9dcfd"
+                    d="M39.81,17.37a12,12,0,0,1-3.49.94A6,6,0,0,0,39,15a12.15,12.15,0,0,1-3.86,1.46,6,6,0,0,0-10.35,5.45,17.32,17.32,0,0,1-12.52-6.25,5.84,5.84,0,0,0-.83,3,6,6,0,0,0,2.71,5,6.11,6.11,0,0,1-2.76-.75V23a5.78,5.78,0,0,0,.42,2.17,6.06,6.06,0,0,0,4.46,3.7,6.05,6.05,0,0,1-1.6.21,6.31,6.31,0,0,1-1.15-.11,6.06,6.06,0,0,0,5.68,4.15,12.29,12.29,0,0,1-7.55,2.57,11.64,11.64,0,0,1-1.45-.09,17.4,17.4,0,0,0,9.32,2.69A16.91,16.91,0,0,0,36.38,24.85a16.52,16.52,0,0,0,.41-3.61c0-.26,0-.51,0-.77A12.4,12.4,0,0,0,39.81,17.37Z" />
+            </svg>
         </div>
         <div class="copyright">
             <p>Copyright &copy; <span>2020</span> </p>
@@ -142,7 +171,7 @@
                     rel="noopener">MohcineDev</a></p>
         </div>
     </footer>
-    <svg class="w-6 h-6 scroll" fill=" rgb(112, 137, 172)" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <svg class="scroll" fill="var(--light)" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd"
             d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
             clip-rule="evenodd"></path>
