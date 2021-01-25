@@ -1,33 +1,39 @@
-const scrollTop = document.querySelector('.scroll')
-const year = document.querySelector('.copyright span')
-const email = document.querySelector('#email')
+const SCROLL_TOP = document.querySelector('.scroll')
+const YEAR = document.querySelector('.copyright span')
+const EMAIL = document.querySelector('#email')
+const REVERSE = document.querySelector('nav svg')
+const HEIGHT = innerHeight
 
-const height = innerHeight
-
+//condition to display scroll btn
 document.addEventListener('scroll', () => {
 
-    if (scrollY >= height * 2)
-        scrollTop.style.display = 'block'
+    if (scrollY >= HEIGHT * 2)
+        SCROLL_TOP.style.display = 'block'
     else
-        scrollTop.style.display = 'none'
+        SCROLL_TOP.style.display = 'none'
 })
 
-scrollTop.addEventListener('click', () => {
+//scroll to top btn
+SCROLL_TOP.addEventListener('click', () => {
 
     scroll({
         top: 0,
         behavior: "smooth"
     })
-
 })
 
-year.textContent = new Date().getFullYear()
+//add current year
+YEAR.textContent = new Date().getFullYear()
 
+//get the placeholder name@mail.com
+let qualifiedName = EMAIL.getAttribute('placeholder')
 
-//placeholder name@mail.com
-let qualifiedName = email.getAttribute('placeholder')
+EMAIL.addEventListener('focus', () => EMAIL.setAttribute('placeholder', ''))
+EMAIL.addEventListener('blur', () => EMAIL.setAttribute('placeholder', qualifiedName))
 
-email.addEventListener('focus', () => email.setAttribute('placeholder', ''))
-email.addEventListener('blur', () => email.setAttribute('placeholder', qualifiedName))
+//DARK / LIGHT mode
+REVERSE.addEventListener('click', () => {
+    document.body.classList.toggle('reverse')
+})
 
-
+//TODO : add local storage
