@@ -1,64 +1,94 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
+:root {
     --bg: rgb(38, 51, 73);
-    --dark: #11171f;
-    --color: #ddd;
-    font-family: Arial, Helvetica, sans-serif;
+    --light: #eee;
+    --card: rgb(33, 45, 60);
+    --footer: #212d3c;
+    --hover: #ccc;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: karla, Helvetica, sans-serif;
 }
 
 body {
     background-color: var(--bg);
-    color: var(--color);
+    color: var(--light);
     margin: 0;
     position: relative;
 }
 
-nav {
-    color: #ddd;
+.reverse {
+    --light: rgb(38, 51, 73);
+    --bg: rgb(220, 233, 255);
+    --card: rgb(202, 220, 251);
+    --footer: #c9dcfd;
+    --hover: #19232e;
 }
 
 a {
     text-decoration: none;
-    color: #ddd;
+    color: var(--light);
 }
 
-nav div {
+nav {
     width: 80%;
     margin: 0 auto;
     display: grid;
+    color: var(--light);
     grid-template-columns: repeat(2, minmax(0px, 100%));
     align-items: center;
 }
 
-nav h1 {
-    display: inline-block;
-    cursor: pointer;
+nav>a {
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-nav h1:hover {
-    color: rgb(170, 170, 170);
+nav>a:hover {
+    color: #fff;
 }
 
 nav ul {
     list-style: none;
+    justify-self: end;
     display: flex;
-    justify-self: flex-end;
+    align-items: center;
+}
+
+.testimonials .cards, .servives .card, .hero a, nav ul li {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.btns a::before, .btns a {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 nav ul li {
     margin-left: 15px;
     padding: 5px 10px;
-    border-radius: 10px;
+    display: inline-block;
 }
 
 nav ul li:nth-child(1) {
-    background-color: var(--color);
+    background-color: var(--light);
 }
 
 nav ul li:nth-child(1) a {
     color: var(--bg);
 }
 
-/**/
+nav svg {
+    cursor: pointer;
+}
 
 .hero {
     height: 90vh;
@@ -83,11 +113,10 @@ nav ul li:nth-child(1) a {
 }
 
 .hero a {
-    background-color: var(--color);
+    background-color: var(--light);
     color: var(--bg);
     font-weight: 600;
     margin: 10px 0;
-    border-radius: 10px;
     padding: 12px 32px;
     display: inline-block;
     position: relative;
@@ -107,7 +136,7 @@ nav ul li:nth-child(1) a {
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .hero a:hover::after {
@@ -116,16 +145,16 @@ nav ul li:nth-child(1) a {
 
 .hero a::before {
     content: "";
-    background: linear-gradient(#eee, #eee), linear-gradient(to right, #eee, #fff);
+    background: linear-gradient(var(--hover), var(--hover)), linear-gradient(to right, var(--hover), var(--hover));
     background-position: 0% 0px, 100% 0px;
     background-size: 0 100%, 0 100%;
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
     position: absolute;
+    transition: 0.3s;
     top: 0;
-    transition: .3s;
-    left: 0px;
+    left: 0;
     z-index: -1;
 }
 
@@ -147,11 +176,12 @@ nav ul li:nth-child(1) a {
     background-size: cover;
     height: 80vh;
     clip-path: polygon(0px 100px, 100% 0%, 100% calc(100% - 100px), 0% 100%);
+    color: #eee;
 }
 
 .bodybuilding>div {
     position: absolute;
-    background-color: rgba(31, 41, 55, .9);
+    background-color: rgba(31, 41, 55, 0.9);
     top: 0;
     left: 0;
     height: 100%;
@@ -188,14 +218,13 @@ nav ul li:nth-child(1) a {
 }
 
 .btns a {
-    background-color: #ddd;
+    background-color: #eee;
     color: rgb(27, 28, 36);
     font-weight: 700;
-    border-radius: 5px;
     padding: .7rem 1rem;
     margin-right: 0.5rem;
     transition: all .3s ease-in;
-    box-shadow: 0px 0px 5px #ddd;
+    box-shadow: 0px 0px 5px #eee;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -203,18 +232,17 @@ nav ul li:nth-child(1) a {
 
 .btns a::before {
     content: "";
-    background: linear-gradient( to top, var(--bg) 60%, rgb(58, 82, 124)), linear-gradient( var(--bg) 60%,rgb(58, 82, 124));
+    background: linear-gradient( to top, rgb(38, 51, 73) 60%, rgb(58, 82, 124)), linear-gradient( rgb(38, 51, 73) 60%, rgb(58, 82, 124));
     background-position: 0% 0%, 0% 100%;
     background-size: 100% 0%, 100% 0%;
     background-repeat: no-repeat;
+    position: absolute;
+    transition: .3s;
     height: 100%;
     width: 100%;
-    position: absolute;
-    top: 0;
-    transition: .3s;
-    left: 0px;
-    border-radius: 5px;
     z-index: -1;
+    left: 0;
+    top: 0;
 }
 
 .btns a:hover::before {
@@ -222,23 +250,23 @@ nav ul li:nth-child(1) a {
 }
 
 .btns a:hover {
-    color: var(--color);
+    color: #eee;
 }
 
 .btns img {
     width: 20px;
-    vertical-align: bottom;
     margin: 0 5px;
+    vertical-align: bottom;
 }
 
 /* servives */
 
 .servives {
     width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    min-height: 90vh;
     display: flex;
+    margin: 0 auto;
+    min-height: 90vh;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
 }
@@ -256,12 +284,12 @@ nav ul li:nth-child(1) a {
 
 .servives .card {
     margin: 1rem;
-    background-color: rgb(33, 45, 60);
-    border-radius: 10px;
+    background-color: var(--card);
     padding: 1rem;
     box-shadow: 2px 2px 5px rgb(74, 95, 123);
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
+
 }
 
 .servives .card:hover {
@@ -315,14 +343,13 @@ nav ul li:nth-child(1) a {
 }
 
 .testimonials .cards {
-    background-color: var(--color);
+    background-color: var(--light);
     color: var(--bg);
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    box-shadow: 0px 0px 3px var(--color);
+    box-shadow: 0px 0px 3px var(--light);
     height: 100%;
     justify-content: space-between;
     box-sizing: border-box;
@@ -331,6 +358,8 @@ nav ul li:nth-child(1) a {
 .testimonials .cards div {
     border: 2px solid var(--bg);
     margin: 10px;
+    -webkit-border-radius: 25%;
+    -moz-border-radius: 25%;
     border-radius: 25%;
     padding: 10px;
     width: 40px;
@@ -381,31 +410,31 @@ nav ul li:nth-child(1) a {
     border: none;
     padding: 10px 20px;
     outline: none;
+    color: var(--bg);
 }
 
 .subscribe form input[type="email"] {
-    background-color: var(--color);
+    background-color: var(--light);
+    -webkit-border-radius: 15px 0 0 15px;
+    -moz-border-radius: 15px 0 0 15px;
     border-radius: 15px 0 0 15px;
 }
 
 .subscribe form input[type="submit"] {
     margin-left: -6px;
+    -webkit-border-radius: 0 15px 15px 0;
+    -moz-border-radius: 0 15px 15px 0;
     border-radius: 0 15px 15px 0;
-    color: var(--bg);
-    background-color: var(--color);
+    background-color: var(--light);
     cursor: pointer;
     transition: .3s;
-}
-
-.subscribe form input[type="submit"]:hover {
-    background-color: #eee;
 }
 
 /**/
 
 footer {
     margin-top: 80px;
-    background-color: rgb(33, 45, 60);
+    background-color: var(--footer);
     padding: 20px 0;
 }
 
@@ -416,9 +445,9 @@ footer .social {
     justify-content: center;
 }
 
-footer img {
+.social svg {
     width: 30px;
-    padding: 10px;
+    margin: 0 10px;
 }
 
 .copyright {
@@ -437,7 +466,7 @@ footer img {
 }
 
 .copyright a:hover {
-    color: var(--color);
+    color: var(--light);
 }
 
 .scroll {
@@ -455,7 +484,7 @@ footer img {
 }
 
 .scroll:hover {
-    fill: var(--color);
+    fill: var(--light);
 }
 
 @keyframes toTop {
@@ -570,6 +599,8 @@ footer img {
         align-items: center;
     }
     .subscribe form input {
+        -webkit-border-radius: 15px !important;
+        -moz-border-radius: 15px !important;
         border-radius: 15px !important;
         display: block;
         margin-top: 10px;
