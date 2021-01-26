@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&display=swap');
 :root {
-    --bg: rgb(38, 51, 73);
-    --light: #eee;
-    --card: rgb(33, 45, 60);
-    --footer: #212d3c;
-    --hover: #ccc;
+    --light: rgb(38, 51, 73);
+    --bg: rgb(220, 233, 255);
+    --card: rgb(202, 220, 251);
+    --footer: #c9dcfd;
+    --hover: #19232e;
 }
 
 html {
@@ -23,11 +23,11 @@ body {
 }
 
 .reverse {
-    --light: rgb(38, 51, 73);
-    --bg: rgb(220, 233, 255);
-    --card: rgb(202, 220, 251);
-    --footer: #c9dcfd;
-    --hover: #19232e;
+    --bg: rgb(38, 51, 73);
+    --light: #eee;
+    --card: rgb(33, 45, 60);
+    --footer: #212d3c;
+    --hover: #ccc;
 }
 
 a {
