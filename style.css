@@ -65,7 +65,7 @@ nav ul {
     align-items: center;
 }
 
-.testimonials .cards, .servives .card, .hero a, nav ul li {
+#testimonials .cards, .servives .card, #hero a, nav ul li {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -80,27 +80,26 @@ nav ul {
 nav ul li {
     margin-left: 15px;
     padding: 5px 10px;
-    display: inline-block;
 }
-
-nav ul li:nth-child(1) {
-    background-color: var(--light);
-}
-
+ 
 nav ul li:nth-child(1) a {
     color: var(--bg);
+    color:var(--light);
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 nav svg {
     cursor: pointer;
 }
+/* hero */
 
-.hero { 
+#hero { 
     background: var(--dots);
     height: 90vh;
 }
 
-.hero>div {
+#hero>div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0px, 100%));
     grid-template-rows: 90vh;
@@ -110,28 +109,30 @@ nav svg {
     justify-items: center;
 }
 
-.hero h1 {
+#hero h1 {
     font-size: 2.5rem;
 }
 
-.hero p {
+#hero p {
     line-height: 25px;
 }
 
-.hero a {
+#hero a {
     background-color: var(--light);
     color: var(--bg);
     font-weight: 600;
     margin: 10px 0;
-    padding: 12px 32px;
+    padding: 0.7rem 2.4rem;
     display: inline-block;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 5px #aaa;
+    border: 2px solid var(--bg);
+    box-shadow:0 0 0 2px var(--light);
     z-index: 2;
+    font-size: 1.1rem;
 }
 
-.hero a::after {
+#hero a::after {
     content: "";
     width: 8px;
     height: 8px;
@@ -145,11 +146,11 @@ nav svg {
     transition: 0.3s;
 }
 
-.hero a:hover::after {
+#hero a:hover::after {
     right: 0%;
 }
 
-.hero a::before {
+#hero a::before {
     content: "";
     background: linear-gradient(var(--hover), var(--hover)), linear-gradient(to right, var(--hover), var(--hover));
     background-position: 0% 0px, 100% 0px;
@@ -164,11 +165,11 @@ nav svg {
     z-index: -1;
 }
 
-.hero a:hover::before {
+#hero a:hover::before {
     background-size: 50% 100%, 50% 100%;
 }
 
-.hero img {
+#hero img {
     width: 58%;
 }
 
@@ -321,25 +322,26 @@ nav svg {
 
 /*testimonials*/
 
-.testimonials {
+#testimonials {
     margin: 60px auto;
     width: 80%;
+    padding: 1rem 0;
 }
 
-.testimonials span {
+#testimonials span {
     font-weight: 800;
 }
 
-.testimonials>p:nth-of-type(1) {
+#testimonials>p:nth-of-type(1) {
     font-weight: 800;
     font-size: 2rem;
 }
 
-.testimonials>p:nth-of-type(2) {
+#testimonials>p:nth-of-type(2) {
     margin-bottom: 60px;
 }
 
-.testimonials>div {
+#testimonials>div {
     display: grid;
     grid-template-columns: repeat(4, minmax(0px, 1fr));
     grid-template-rows: minmax(0px, 100%);
@@ -347,7 +349,7 @@ nav svg {
     align-items: center;
 }
 
-.testimonials .cards {
+#testimonials .cards {
     background-color: var(--light);
     color: var(--bg);
     display: flex;
@@ -360,26 +362,27 @@ nav svg {
     box-sizing: border-box;
 }
 
-.testimonials .cards div {
-    border: 2px solid var(--bg);
+#testimonials .cards div {
+    border : 2px solid var(--bg);
     margin: 10px;
-    -webkit-border-radius: 25%;
-    -moz-border-radius: 25%;
-    border-radius: 25%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    border-radius: 20%;
     padding: 10px;
     width: 40px;
 }
 
-.testimonials .cards img {
-    width: 100%;
-    height: 100%;
+#testimonials .cards img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.testimonials>p:nth-of-type(2) {
+#testimonials>p:nth-of-type(2) {
     line-height: 25px;
 }
 
-.testimonials .cards p:nth-of-type(1) {
+#testimonials .cards p:nth-of-type(1) {
     text-align: center;
     line-height: 25px;
     font-weight: 700;
@@ -501,25 +504,25 @@ footer .social {
 /* Large devices */
 
 @media only screen and (max-width: 992px) {
-    .hero>div {
+    #hero>div {
         width: 90%;
     }
-    .hero img {
+    #hero img {
         width: 70%;
     }
-    .hero>div>div {
+    #hero>div>div {
         margin-left: 15px;
     }
-    .servives, .testimonials {
+    .servives, #testimonials {
         width: 98%;
     }
     .bodybuilding>div>div {
         width: 90%;
     }
-    .testimonials>div {
+    #testimonials>div {
         gap: 5px;
     }
-    .testimonials .cards {
+    #testimonials .cards {
         padding: 10px;
     }
 }
@@ -527,12 +530,12 @@ footer .social {
 /* Medium devices */
 
 @media only screen and (max-width: 768px) {
-    .hero>div {
+    #hero>div {
         margin: 15px auto;
         grid-template-columns: minmax(0px, 100%);
         grid-template-rows: repeat(2, minmax(50%, 100%));
     }
-    .hero>div>div {
+    #hero>div>div {
         grid-row: 2/3;
         display: flex;
         flex-direction: column;
@@ -540,17 +543,17 @@ footer .social {
         justify-content: center;
         align-items: center;
     }
-    .hero img {
+    #hero img {
         grid-row: 1/2;
         width: 40%;
     }
-    .hero h1 {
+    #hero h1 {
         margin: 20px 0;
     }
-    .hero a {
+    #hero a {
         width: 25%;
     }
-    .servives, .testimonials {
+    .servives, #testimonials {
         width: 80%;
     }
     .servives div {
@@ -559,7 +562,7 @@ footer .social {
     .bodybuilding {
         clip-path: polygon(0px 50px, 100% 0%, 100% calc(100% - 50px), 0% 100%);
     }
-    .testimonials>div {
+    #testimonials>div {
         grid-template-columns: repeat(2, minmax(0px, 1fr));
         grid-template-rows: repeat(2, minmax(0px, 100%));
         gap: 15px;
@@ -569,20 +572,20 @@ footer .social {
 /* small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
-    .hero>div>div {
+    #hero>div>div {
         margin-left: 0;
     }
-    .testimonials>div {
+    #testimonials>div {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
     }
-    .testimonials .cards {
+    #testimonials .cards {
         height: auto;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .hero a {
+    #hero a {
         width: 80%;
     }
     .bodybuilding {
